@@ -1,0 +1,9 @@
+{% extends 'base.html'%} {% block content%}
+<h1>Welcome to snack list page</h1>
+<a href="{% url 'snack_create' %}"><button>Create snack</button></a>
+{% for snack in Snacks%}
+<h3><a href="{% url 'snack_detail' snack.pk%}">{{snack.title}}</a></h3>
+
+<a href="{% url 'snack_update' snack.pk%}"><button>Update</button></a>
+<a href="{% url 'snack_delete' snack.pk%}"><button>Delete</button></a>
+{%endfor%} {% endblock content%}
